@@ -1,0 +1,27 @@
+apiVersion: ripsaw.cloudbulldozer.io/v1alpha1
+kind: Benchmark
+metadata:
+  name: iperf3-benchmark
+  namespace: my-ripsaw
+spec:
+  clustername: r189a
+  workload:
+    name: iperf3
+    args:
+      pairs: 1
+      hostnetwork: false
+      pin: true
+      pin_server: "cmp1.dsp.lab"
+      pin_client: "cmp1.dsp.lab"
+      port: 5201
+      transmit_type: time
+      transmit_value: 60
+      omit_start: 0
+      length_buffer: 128K
+      window_size: 64k
+      ip_tos: 0
+      mss: 900
+      streams: 1
+      extra_options_client: ' '
+      extra_options_server: ' '
+      #retries: 200
